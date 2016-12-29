@@ -19,18 +19,18 @@ public class Duplicates {
 	 */
 
 	public String[] delite(String[] array) {
+		
+		int counter = 0;
 		for(int i = 0; i < array.length; i++) {
-			for(int j = i + 1; j < array.length; j++) {
+			for(int j = i + 1; j < array.length - i - 1; j++) {
 				if(array[i].equals(array[j])) {
 					array[j] = null;
-					String temp = array[j];
-					array[j] = array[array.length - 1];
-					array[array.length - 1] = temp;
-					String[] arrNew = new String [array.length - 1];
-					array = Arrays.copyOf(array, arrNew.length);
+					counter ++;
 				}
 			}
 		}
+		String[] arrNew = new String [array.length - counter];
+		array = Arrays.copyOf(array, arrNew.length);
 		return array;
 	}
 }
