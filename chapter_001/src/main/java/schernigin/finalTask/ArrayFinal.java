@@ -19,10 +19,10 @@ public class ArrayFinal {
 	public boolean check(int[] array) {
 		int counter = 0;
 		for (int i = 0; i < array.length; i++) {
-			if (i <= i + 1) {
-				counter++;
-			} else {
+			if (array[i] > array[i + 1]) {
 				break;
+			} else {
+				counter++;			
 			}
 		} 
 		return array.length == counter;
