@@ -17,16 +17,16 @@ public class ArrayFinalTest {
 	/**
 	 * This method checks if the array is sorted.
 	 */
-	 
+	 /*
 	 @Test
 	 public void whenAddArrayThenTrueIfTheArrayIsSorted() {
 	 	ArrayFinal checkArray = new ArrayFinal();
 	 	final int[] arr = {1, 2, 3, 4};
-	 	final int[] arrCheck = {1, 2, 3, 4};
-	 	final int[] result = checkArray.check(arr);
-	 	assertThat(result, is(true));
+	 	final boolean expect = true;
+	 	final boolean result = checkArray.check(arr);
+	 	assertThat(result, is(expect));
 	 }
-	 
+	 */
 	 /**
 	 * This method checks if the array is not sorted.
 	 */
@@ -35,9 +35,9 @@ public class ArrayFinalTest {
 	 public void whenAddArrayThenFalseIfTheArrayIsNotSorted() {
 	 	ArrayFinal checkArray = new ArrayFinal();
 	 	final int[] arr = {4, 2, 3, 1};
-	 	final int[] arrCheck = {1, 2, 3, 4};
-	 	final int[] result = checkArray.check(arr);
-	 	assertThat(result, is(false));
+	 	final boolean expect = false;
+	 	final boolean result = checkArray.check(arr);
+	 	assertThat(result, is(expect));
 	 }
 	 
 	 /**
