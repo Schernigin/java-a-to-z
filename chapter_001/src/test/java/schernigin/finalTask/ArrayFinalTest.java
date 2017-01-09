@@ -17,7 +17,7 @@ public class ArrayFinalTest {
 	/**
 	 * This method checks if the array is sorted.
 	 */
-	 /*
+	 
 	 @Test
 	 public void whenAddArrayThenTrueIfTheArrayIsSorted() {
 	 	ArrayFinal checkArray = new ArrayFinal();
@@ -26,7 +26,7 @@ public class ArrayFinalTest {
 	 	final boolean result = checkArray.check(arr);
 	 	assertThat(result, is(expect));
 	 }
-	 */
+	 
 	 /**
 	 * This method checks if the array is not sorted.
 	 */
