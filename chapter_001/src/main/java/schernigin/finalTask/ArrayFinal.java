@@ -37,16 +37,15 @@ public class ArrayFinal {
 		
 	public int[] combineArrays (int arrOne[], int arrTwo[]) {
 		int[] arrTemp = new int[arrOne.length + arrTwo.length];
-		for(int i = 0; i < arrTemp.length; i++) {
-			int index = 0;
+		int index = 0;
+		for(int i = 0; i < arrTemp.length; i += 2) {
 			if(arrOne[index] > arrTwo[index]) {
-				arrOne[index] = arrTemp[i + 1];
-				arrTwo[index] = arrTemp[i];				
+				arrTemp[i + 1] = arrOne[index];
+				arrTemp[i] = arrTwo[index]; 				
 			} else {
-				arrOne[index] = arrTemp[i];
-				arrTwo[index] = arrTemp[i + 1];
+				arrTemp[i] = arrOne[index];
+				arrTemp[i + 1] = arrTwo[index];
 			}
-			i += 2;
 			index++;
 		}
 		return arrTemp;
