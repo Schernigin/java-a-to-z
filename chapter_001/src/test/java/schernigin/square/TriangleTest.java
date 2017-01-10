@@ -53,12 +53,12 @@ public class TriangleTest {
    	@Test(expected = Exception.class)
     	public final void whenWrongAreaThenReturnException() throws Exception {
 
-        Point a = new Point(0d, 0d);
-        Point b = new Point(0d, 0d);
-        Point c = new Point(0d, 0d);
-
-        Triangle triangle = new Triangle(a, b, c);
-
-        triangle.area();
+	        Point a = new Point(0d, 0d);
+	        Point b = new Point(0d, 0d);
+	        Point c = new Point(0d, 0d);
+	
+	        Triangle triangle = new Triangle(a, b, c);
+	
+	        triangle.area();
 	}
 }

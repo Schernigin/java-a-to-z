@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <duplicate-finder-result version="1">
-    <project artifactId="chapter_001" groupId="schernigin" version="1.0" type="jar"/>
+    <project artifactId="chapter_001" groupId="ru.schernigin" version="1.0" type="jar"/>
     <configuration skip="false" quiet="false" checkCompileClasspath="true" checkRuntimeClasspath="true" checkTestClasspath="true" failBuildInCaseOfDifferentContentConflict="false" failBuildInCaseOfEqualContentConflict="false" failBuildInCaseOfConflict="false" printEqualFiles="false" preferLocal="true" includeBootClasspath="false" bootClasspathProperty="sun.boot.class.path" includePomProjects="false" useDefaultResourceIgnoreList="true" useDefaultClassIgnoreList="true" useResultFile="true" resultFileMinClasspathCount="2" resultFile="C:\Projects\java-a-to-z\chapter_001\target\duplicate-finder-result.xml">
         <ignoredResourcePatterns/>
         <ignoredClassPatterns/>
