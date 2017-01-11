@@ -1,4 +1,4 @@
-package schernigin.cycles;
+package ru.schernigin.cycles;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

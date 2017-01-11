@@ -1,4 +1,4 @@
-package schernigin.arrays;
+package ru.schernigin.arrays;
 
 import java.util.Arrays;
 

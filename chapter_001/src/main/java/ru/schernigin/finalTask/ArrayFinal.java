@@ -1,4 +1,4 @@
-package schernigin.finalTask;
+package ru.schernigin.finalTask;
 
 /**
  * class ArrayFinal.

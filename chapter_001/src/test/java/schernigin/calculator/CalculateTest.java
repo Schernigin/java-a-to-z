@@ -1,4 +1,4 @@
-package schernigin.calculator;
+package ru.schernigin.calculator;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

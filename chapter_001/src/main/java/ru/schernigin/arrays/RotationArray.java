@@ -1,4 +1,4 @@
-package schernigin.arrays;
+package ru.schernigin.arrays;
 
 /**
 * class Rotation array.

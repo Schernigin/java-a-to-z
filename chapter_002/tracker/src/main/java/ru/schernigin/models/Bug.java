@@ -8,5 +8,9 @@ package ru.schernigin.models;
  */
 
 public class Bug extends Item {
-
+	
+	public Bug(String name, String desc) {
+		this.name = name;
+		this.description = desc;	
+	}
 }

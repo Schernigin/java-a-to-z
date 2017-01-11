@@ -1,4 +1,4 @@
-package schernigin.square;
+package ru.schernigin.square;
 
 /**
  * class to find the maximum number of two and three numbers

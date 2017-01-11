@@ -1,4 +1,4 @@
-package schernigin.arrays;
+package ru.schernigin.arrays;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

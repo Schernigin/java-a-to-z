@@ -1,4 +1,4 @@
-package schernigin.square;
+package ru.schernigin.square;
 
 import static java.lang.Math.max;
 

@@ -1,4 +1,4 @@
-package schernigin.calculator;
+package ru.schernigin.calculator;
 
 /**
 *  Class. 

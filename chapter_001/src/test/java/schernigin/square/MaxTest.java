@@ -1,4 +1,4 @@
-package schernigin.square;
+package ru.schernigin.square;
 
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;

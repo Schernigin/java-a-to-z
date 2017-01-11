@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="schernigin.square.MaxTest" time="0" errors="0" skipped="0">
+<testsuite tests="2" failures="0" name="ru.schernigin.finalTask.ArrayFinalTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="c:\Program Files\Java\jdk1.8.0_112\jre\bin"/>
@@ -63,9 +63,6 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="schernigin.square.MaxTest" name="whenAddTheeValuesThenReturnMax" time="0"/>
-  <testcase classname="schernigin.square.MaxTest" name="whenAddTwoValuesThenReturnMax" time="0"/>
-  <testcase classname="schernigin.square.MaxTest" name="whenAddTheeValuesThenReturnTheMax" time="0"/>
-  <testcase classname="schernigin.square.MaxTest" name="wehenfirstAndSecondThenMax" time="0"/>
-  <testcase classname="schernigin.square.MaxTest" name="wehenFirstAndSecondAndTrheeThenMax" time="0"/>
+  <testcase classname="ru.schernigin.finalTask.ArrayFinalTest" name="whenAddArrayThenFalseIfTheArrayIsNotSorted" time="0"/>
+  <testcase classname="ru.schernigin.finalTask.ArrayFinalTest" name="whenAddTwoArraysThenOneArraySorted" time="0"/>
 </testsuite>

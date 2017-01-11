@@ -1,4 +1,4 @@
-package schernigin.cycles;
+package ru.schernigin.cycles;
 
 /**
 * Class Factorial.
