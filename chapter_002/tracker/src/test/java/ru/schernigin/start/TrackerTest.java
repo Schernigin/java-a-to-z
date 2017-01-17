@@ -16,31 +16,19 @@ import static org.junit.Assert.*;
 
 public class TrackerTest {
 
-	/*
-	* this array used in the tests.
-	*/
-	
-	private Item[] items = new Item[2];
-	
-	/*
-	* Objects for test.
-	*/
-	
-	Item item = new Item(null, null, 0);
-	Item expected = new Item (null, null, 0);
-	Tracker track = new Tracker();
-	track.add(item);
-	track.add(expected);
 	
 	/*
 	* Test method add.
 	*/
 
 	@Test
-	public void when_add_item_then_new_item_and_new_id() {
-		Comparable c = mock(Comparable.class);
-		when(c.compareTo("Test")).thenReturn(1);
-		assertEquals(1, c.compareTo("Test"));
+	public void whenAddThenNewItem() {
+		Tracker tracker = new Tracker();
+		Item item = new Item("first", "description", 1);
+		tracker.add(item);
+		assertThat(item.getName(), is("first"));
+		assertThat(item.getDescription(), is("description"));
+		assertThat(item.getCreate(), is(1L));
 	}
 	
 	/*
@@ -48,7 +36,7 @@ public class TrackerTest {
 	*/
 	
 	@Test
-	public void when_generate_id_then_new_id() {
+	public void whenGenerateIdThenNewId() {
 		Comparable c = mock(Comparable.class);
 		when(c.compareTo("Test")).thenReturn(1);
 		assertEquals(1, c.compareTo("Test"));
@@ -59,26 +47,44 @@ public class TrackerTest {
 	*/
 	
 	@Test
-	public void when_replase_item_then_item_update() {
-		item.setName("ivanov");
-		item.setDescription("vse pochinil");
-		item.setCreate(2);
-		track.update(item);
-		assertThat(item.getName, is(expected.getName));
-		assertThat(item.getDescription, is(expected.getDescription));
-		assertThat(item.getCreate, is(expected.getCreate));
+	public void whenUpdateThenItemUpdate() {
+		Tracker tracker = new Tracker();
+		Item item = new Item("second", "description2", 2);
+		tracker.update(item);
+		assertThat(item.getName(), is("second"));
+		assertThat(item.getDescription(), is("description2"));
+		assertThat(item.getCreate(), is(2L));
 	}
 	
 	/*
-	* Test method update.
+	* Test remove (delite).
 	*/
 	
-	@Test
-	public void when_take_item_and_use_delite_then_item_equalse_null() {
-		track.delite(item);
-		assertThat(item.getName, is(expected.getName));
-		assertThat(item.getDescription, is(expected.getDescription));
-		assertThat(item.getCreate, is(expected.getCreate));
-	}
+//	@Test
+//	public void whenDeliteThenItemEqualsNull(){
+//		Tracker tracker = new Tracker();
+//		Item item = new Item("second", "description2", 2);
+//		tracker.delite(item);
+//		assertThat( is(null));
+//		
+//	}
 
+	/*
+	* Test findByName.
+	*/
+		
+	@Test
+	public void whenFindByIDTwenReturnItemId() {
+		Tracker tracker = new Tracker();
+		Item item = new Item("first", "description1", 1);
+		Item item1 = new Item("second", "description2", 2);
+		Item item2 = new Item("third", "description3", 3);
+		Item expected = tracker.findById("second");
+		tracker.add(item);
+		tracker.add(item1);
+		tracker.add(item2);
+		tracker.add(expected);
+		assertEquals(expected, item1);
+	}
+	
 }
