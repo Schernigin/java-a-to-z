@@ -64,7 +64,7 @@ public class TrackerTest {
 //	public void whenDeleteThenItemEqualsNull(){
 //		Tracker tracker = new Tracker();
 //		Item item = new Item("second", "description2", 2);
-//		assertNull(tracker.delete(item).getId());
+//		assertThat();
 		
 	}
 
