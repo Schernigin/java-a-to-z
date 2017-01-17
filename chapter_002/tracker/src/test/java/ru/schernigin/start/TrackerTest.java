@@ -57,23 +57,24 @@ public class TrackerTest {
 	}
 	
 	/*
-	* Test remove (delite).
+	* Test remove (delete).
 	*/
 	
-//	@Test
-//	public void whenDeliteThenItemEqualsNull(){
-//		Tracker tracker = new Tracker();
-//		Item item = new Item("second", "description2", 2);
-//		tracker.delite(item);
-//		assertThat( is(null));
-//		
-//	}
+	@Test
+	public void whenDeleteThenItemEqualsNull(){
+		Tracker tracker = new Tracker();
+		Item item = new Item("second", "description2", 2);
+		tracker.delete(item);
+		boolean expected = true;
+		assertThat(tracker.getAllNull(), is(expected));
+		
+	}
 
 	/*
 	* Test findByName.
 	*/
 		
-	@Test
+	/*@Test
 	public void whenFindByIDTwenReturnItemId() {
 		Tracker tracker = new Tracker();
 		Item item = new Item("first", "description1", 1);
@@ -85,6 +86,6 @@ public class TrackerTest {
 		tracker.add(item2);
 		tracker.add(expected);
 		assertEquals(expected, item1);
-	}
+	}*/
 	
 }
