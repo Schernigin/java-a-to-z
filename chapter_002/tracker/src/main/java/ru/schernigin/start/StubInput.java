@@ -1,6 +1,6 @@
-/*package ru.schernigin.start;
+package ru.schernigin.start;
 
-public class StubInput implements {
+public class StubInput implements Input {
 	private String[] answers;
 	private int position = 0;
 	
@@ -11,4 +11,4 @@ public class StubInput implements {
 	public String ask(String question) {
 		return answers[position++];
 	}
-}*/
+}

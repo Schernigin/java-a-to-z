@@ -1,6 +1,7 @@
 ru\schernigin\start\StartUI.class
 ru\schernigin\start\Input.class
 ru\schernigin\models\Bug.class
+ru\schernigin\start\StubInput.class
 ru\schernigin\models\Item.class
 ru\schernigin\start\ConsoleInput.class
 ru\schernigin\start\Tracker.class

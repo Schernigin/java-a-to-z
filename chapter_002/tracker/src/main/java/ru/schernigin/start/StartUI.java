@@ -12,13 +12,13 @@ public class StartUI {
 	public void init() {
 		String name = input.ask("Please enter the taks's name: ");
 		Tracker tracker = new Tracker();
-		tracker.add(new Task(name, "first desc"));
+		tracker.add(new Item(name, "first desc", 1));
 		for (Item item : tracker.getAll()) {
 			System.out.println(item.getName());
 		}	
 	}
 
-	public static void main(String[] args){
+	public static void main(String[] args)  {
 		//Input input = new StubInput(new String[] {"creat stub task"})
 		Input input = new ConsoleInput();
 		new StartUI(input).init();
