@@ -60,12 +60,14 @@ public class TrackerTest {
 	* Test remove (delete).
 	*/
 	
-//	@Test
-//	public void whenDeleteThenItemEqualsNull(){
-//		Tracker tracker = new Tracker();
-//		Item item = new Item("second", "description2", 2);
-//		assertThat();
-		
+	@Test
+	public void whenDeleteThenItemEqualsNull(){
+		Tracker tracker = new Tracker();
+		Item item = new Item("second", "description2", 2);
+		tracker.add(item);
+		tracker.delete(item); 
+		Item expected = null;
+		assertThat(tracker.findById(item.getId()), is(expected));	
 	}
 
 	/*
@@ -73,7 +75,7 @@ public class TrackerTest {
 	*/
 		
 	@Test
-	public void whenFindByIDTwenReturnItemId() {
+	public void whenFindByNameTwenReturnItemName() {
 		Tracker tracker = new Tracker();
 		Item item = new Item("first", "description1", 1);
 		Item item1 = new Item("second", "description2", 2);
@@ -105,8 +107,27 @@ public class TrackerTest {
 	* Test getAll.
 	*/
 	
-//	@Test
-//	public void whenGetAllThenReturnAllArrayItems() {
-//		assertThat()
-//	}
+	@Test
+	public void whenGetAllThenReturnAllArrayItems() {
+		Tracker tracker = new Tracker();
+		Item item = new Item("first", "description1", 1);
+		Item item1 = new Item("second", "description2", 2);
+		Item item2 = new Item("third", "description3", 3);
+		tracker.add(item);
+		tracker.add(item1);
+		tracker.add(item2);
+		Item[] itemsExpected = new Item[]{item, item1, item2};
+		assertThat(tracker.getAll(), is(itemsExpected));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
