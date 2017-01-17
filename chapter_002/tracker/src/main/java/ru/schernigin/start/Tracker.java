@@ -65,7 +65,7 @@ public class Tracker {
 	* method to remove the item.
 	*/
 	
-	public void delite(Item item) {
+	public void delete(Item item) {
 		for (int i = 0; i < this.items.length; i++) {
 			if (this.items[i] != null && this.items[i].getId().equals(item.getId())) {
 				this.items[i] = null;
@@ -114,4 +114,21 @@ public class Tracker {
 		}
 		return result;
 	}
+	
+	/**
+	* This method checks whether there is an application in the array.
+	* @param array[].
+	* @return true if all null.
+	*/
+	
+	public boolean getAllNull() {
+		for(int i = 0; i <= this.items.length; i++) {
+			if(this.items[i] != null) {
+				return false;
+			}
+		}
+	return true;
+	}
+	
+
 }
