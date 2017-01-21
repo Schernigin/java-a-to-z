@@ -1,9 +1,12 @@
 package ru.schernigin.models;
 
+import java.util.*;
+
+
 /**
  * class Item.
  * @author schernigin.
- * @sienc 15.12.2016
+ * @since 15.12.2016
  * @version 1.0
  */
 
@@ -27,10 +30,10 @@ public class Item {
 	private String description;
 	
 	/**
-	* time item.
+	* date item.
 	*/
 
-	private long create;
+	private Date createDate;
 	
 	/**
 	* default constructor item.
@@ -38,17 +41,39 @@ public class Item {
 
 	public Item() {
 	}
+	
+	/*
+	* array for comments.
+	*/
+	
+	private List<Comments> comments = new ArrayList<Comments>();
+	
 
 	/**
 	* constructor item.
 	* @param name item.
 	* @param description item.
-	* @param time item.
-	*/
-	public Item(String name, String description, long create) {
+	 */
+	public Item(String name, String description) {
 		this.name = name;
 		this.description = description;
-		this.create = create;
+		this.createDate = new Date();
+	}
+	
+	/*
+	* this method return the comment of the item.
+	*/
+	
+	public List<Comments> getAllComments() {
+		return this.comments;
+	}
+		
+	/*
+	* this method add new comment.
+	*/
+	
+	public void addComments(Comments comment) {
+		this.comments.add(comment);
 	}
 	
 	/**
@@ -72,6 +97,7 @@ public class Item {
 	*/
 
 	public String getDescription() {
+
 		return this.description;
 	}
 	
@@ -87,29 +113,34 @@ public class Item {
 	* This method returns the time create of the element.
 	*/
 
-	public long getCreate() {
-		return this.create;
+	public Date getCreateDate() {
+		return this.createDate;
 	}
 	
 	/**
 	* This method sets the time create item.
 	*/
 	
-	public void setCreate(long a) {
-		this.create = a;
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
 	}
 
 	/**
 	* This method returns the id of the element.
 	*/
+	
 	public String getId() {
+
 		return this.id;
 	}
 
 	/**
 	* This method sets the item id.
 	*/
+	
 	public void setId(String id) {
 		this.id = id;
 	}
+
+
 }

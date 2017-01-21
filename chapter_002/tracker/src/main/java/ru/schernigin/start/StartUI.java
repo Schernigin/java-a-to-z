@@ -21,22 +21,13 @@ public class StartUI {
 		return this.inMenu;
 	}
 	
-	public void select() {
-		for(String i : this.menu) {
-			boolean firstValue;
-			if(firstValue) {
-				firstValue = this.menu[i].startsWith("1");
-				new StartUI(input).init();
-			}	
-		}
-	}
 		
 
 	
 	public void init() {
 		String name = input.ask("Please enter the taks's name: ");
 		Tracker tracker = new Tracker();
-		tracker.add(new Item(name, "first desc", 1));
+		tracker.add(new Item(name, "first desc"));
 		for (Item item : tracker.getAll()) {
 			System.out.println(item.getName());
 		}	

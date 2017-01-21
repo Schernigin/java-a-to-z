@@ -2,6 +2,7 @@ package ru.schernigin.start;
 
 import static org.mockito.Mockito.*;
 import ru.schernigin.models.*;
+import java.util.*;
 import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
@@ -24,11 +25,10 @@ public class TrackerTest {
 	@Test
 	public void whenAddThenNewItem() {
 		Tracker tracker = new Tracker();
-		Item item = new Item("first", "description", 1);
-		tracker.add(item);
-		assertThat(item.getName(), is("first"));
-		assertThat(item.getDescription(), is("description"));
-		assertThat(item.getCreate(), is(1L));
+		Item item = new Item("first", "description");
+		Item result = tracker.add(item);
+		assertThat(result, is(item));
+
 	}
 	
 	/*
@@ -49,11 +49,11 @@ public class TrackerTest {
 	@Test
 	public void whenUpdateThenItemUpdate() {
 		Tracker tracker = new Tracker();
-		Item item = new Item("second", "description2", 2);
+		Item item = new Item("second", "description2");
 		tracker.update(item);
 		assertThat(item.getName(), is("second"));
 		assertThat(item.getDescription(), is("description2"));
-		assertThat(item.getCreate(), is(2L));
+
 	}
 	
 	/*
@@ -63,7 +63,7 @@ public class TrackerTest {
 	@Test
 	public void whenDeleteThenItemEqualsNull(){
 		Tracker tracker = new Tracker();
-		Item item = new Item("second", "description2", 2);
+		Item item = new Item("second", "description2");
 		tracker.add(item);
 		tracker.delete(item); 
 		Item expected = null;
@@ -77,9 +77,9 @@ public class TrackerTest {
 	@Test
 	public void whenFindByNameTwenReturnItemName() {
 		Tracker tracker = new Tracker();
-		Item item = new Item("first", "description1", 1);
-		Item item1 = new Item("second", "description2", 2);
-		Item item2 = new Item("third", "description3", 3);
+		Item item = new Item("first", "description1");
+		Item item1 = new Item("second", "description2");
+		Item item2 = new Item("third", "description3");
 		tracker.add(item);
 		tracker.add(item1);
 		tracker.add(item2);
@@ -94,9 +94,9 @@ public class TrackerTest {
 	@Test
 	public void whenFindByIdThenReturnId() {
 		Tracker tracker = new Tracker();
-		Item item = new Item("first", "description1", 1);
-		Item item1 = new Item("second", "description2", 2);
-		Item item2 = new Item("third", "description3", 3);
+		Item item = new Item("first", "description1");
+		Item item1 = new Item("second", "description2");
+		Item item2 = new Item("third", "description3");
 		tracker.add(item);
 		tracker.add(item1);
 		tracker.add(item2);
@@ -110,9 +110,9 @@ public class TrackerTest {
 	@Test
 	public void whenGetAllThenReturnAllArrayItems() {
 		Tracker tracker = new Tracker();
-		Item item = new Item("first", "description1", 1);
-		Item item1 = new Item("second", "description2", 2);
-		Item item2 = new Item("third", "description3", 3);
+		Item item = new Item("first", "description1");
+		Item item1 = new Item("second", "description2");
+		Item item2 = new Item("third", "description3");
 		tracker.add(item);
 		tracker.add(item1);
 		tracker.add(item2);
