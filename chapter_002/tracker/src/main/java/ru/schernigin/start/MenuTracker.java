@@ -3,6 +3,8 @@ package ru.schernigin.start;
 import ru.schernigin.models.Item;
 import ru.schernigin.models.Comments;
 
+import java.text.Format;
+
 /**
  * Class MenuTracker.
  * author Schernigin
@@ -63,9 +65,12 @@ public class MenuTracker {
         }
 
         public void execute(Input input, Tracker tracker){
+            String id = input.ask("Please enter the item id : ");
             String name = input.ask("Please enter the item's name: ");
             String desc = input.ask("Please enter the item's description: ");
-            tracker.update(new Item(name, desc));
+            Item item = new Item(name, desc);
+            item.setId(id);
+            tracker.update(item);
         }
 
         public String info() {
@@ -110,7 +115,9 @@ public class MenuTracker {
         }
 
         public void execute(Input input, Tracker tracker){
-            tracker.getAll();
+            for (Item item : tracker.getAll()) {
+                System.out.println(String.format("%s. %s", item.getId(), item.getName()));
+            }
         }
 
         public String info() {
@@ -145,7 +152,7 @@ public class MenuTracker {
         }
 
         public String info() {
-            return String.format("%s %s", this.key(), "add comment item");
+            return String.format("%s %s", this.key(), "Delete item");
         }
     }
 }
