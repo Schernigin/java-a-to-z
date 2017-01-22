@@ -46,9 +46,9 @@ public class Tracker {
 
 	/**
 	 *This method add new comment for the Item.
-	 *@param comment for Item
-	 *@param id is Item's id
 	 *@return item with added comment
+	 * @param id is Item's id
+	 * @param comment for Item
 	 */
 
 	public Item addComment(String id, Comments comment) {

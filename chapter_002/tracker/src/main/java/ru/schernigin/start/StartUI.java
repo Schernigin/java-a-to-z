@@ -7,34 +7,26 @@ public class StartUI {
 	
 	private String inMenu;
 	
-	private String[] menu = {"Hello! MENU:", "1 New item", "2 show all items", "3 update item", "4 find the item on behalf of the", "5 find the item on id of the", "6 find the item on the description", "7 delete item", "8 exsit"};
+	private String[] menu = {"1 New item", "2 show all items", "3 update item", "4 find the item on behalf of the", "5 find the item on id of the", "6 find the item on the description", "7 delete item", "8 add comment", "9 exsit"};
 	
 	public StartUI(Input input) {
 		this.input = input;
 	}	
-			
-	public String showMenu(){
-		for(String i : this.menu) {
-			System.out.println(i);
-		}
-		this.inMenu = input.ask("select the menu item, eg: 3");		
-		return this.inMenu;
-	}
-	
-		
 
 	
 	public void init() {
-		String name = input.ask("Please enter the taks's name: ");
 		Tracker tracker = new Tracker();
-		tracker.add(new Item(name, "first desc"));
-		for (Item item : tracker.getAll()) {
-			System.out.println(item.getName());
-		}	
+		MenuTracker menu = new MenuTracker(tracker, this.input);
+		menu.fillActions();
+		do {
+			menu.showMenu();
+			int key = Integer.valueOf(input.ask("Select:"));
+			menu.select(key);
+		} while (!"y".equals(this.input.ask("Exit? y")));
 	} 
 
 	public static void main(String[] args)  {
 		Input input = new ConsoleInput();
-		new StartUI(input).showMenu();
+		new StartUI(input).init();
 	}
 }
