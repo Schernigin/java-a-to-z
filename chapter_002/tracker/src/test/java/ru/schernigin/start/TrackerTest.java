@@ -116,8 +116,12 @@ public class TrackerTest {
 		tracker.add(item);
 		tracker.add(item1);
 		tracker.add(item2);
-		Item[] itemsExpected = new Item[]{item, item1, item2};
-		assertThat(tracker.getAll(), is(itemsExpected));
+		final List<Item> checked = new ArrayList<Item>();
+		checked.add(item);
+		checked.add(item1);
+		checked.add(item2);
+		List<Item> result = tracker.getAll();
+		assertThat(result, is(checked));
 	}
 	
 	

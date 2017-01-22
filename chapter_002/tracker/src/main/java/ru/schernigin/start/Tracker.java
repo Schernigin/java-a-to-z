@@ -23,12 +23,6 @@ public class Tracker {
 	private List<Item> items = new ArrayList<Item>();
 	
 	/**
-	* this initialization position
-	*/
-	
-	private int position = 0;
-	
-	/**
 	* constant to generate ID.
 	*/
 	
@@ -40,7 +34,7 @@ public class Tracker {
 	
 	public Item add(Item item) {
 		item.setId(this.generateId());
-		this.items.set(position++, item);
+		this.items.add(item);
 		return item;
 	}
 
@@ -126,12 +120,9 @@ public class Tracker {
 	* method to get the list of all item.
 	*/
 	
-	public Item[] getAll() {
-		Item[] result = new Item[position];
-		for (int index = 0; index != this.position; index++) {
-			result[index] = this.items.get(index);
-		}
-		return result;
+	public List<Item> getAll() {
+
+		return items;
 	}
 
 }
