@@ -133,7 +133,7 @@ public class MenuTracker {
         public void execute(Input input, Tracker tracker){
             String id = input.ask("Please enter id item: ");
             String comment = input.ask("Please enter comment item: ");
-          //  tracker.addComment(id, comment);
+            tracker.addComment(id, new Comments(comment));
         }
 
         public String info() {
@@ -148,7 +148,7 @@ public class MenuTracker {
 
         public void execute(Input input, Tracker tracker){
             String id = input.ask("Please enter id item: ");
-            tracker.delete(new Item());
+            tracker.delete(tracker.findById(id));
         }
 
         public String info() {
