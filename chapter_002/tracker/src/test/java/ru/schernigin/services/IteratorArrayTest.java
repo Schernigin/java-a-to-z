@@ -59,12 +59,11 @@ public class IteratorArrayTest {
 
     @Test
     public void whenUseIteratEorvenNumbersThenReturnFalse() {
-        IteratorArray it = new IteratorArray(new int[] {1, 3});
+        IteratorArray it = new IteratorArray(new int[] {1, 2, 1, 5});
 
-        it.iteratEorvenNumbers();
-        int result = (Integer) it.iteratEorvenNumbers();
+        int result = (Integer) it.iteratorPrimes();
 
-        assertThat(result, is(2));
+        assertThat(result, is(5));
     }
 
 }
