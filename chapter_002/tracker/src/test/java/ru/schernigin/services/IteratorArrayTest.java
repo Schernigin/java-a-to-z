@@ -50,7 +50,16 @@ public class IteratorArrayTest {
 
     @Test
     public void whenUseIteratEorvenNumbersThenReturnEorvenNumbers() {
-        IteratorArray it = new IteratorArray(new int[] {1, 2});
+        IteratorArray it = new IteratorArray(new int[] {1, 3, 5, 2});
+
+        int result = (Integer) it.iteratEorvenNumbers();
+
+        assertThat(result, is(2));
+    }
+
+    @Test
+    public void whenUseIteratEorvenNumbersThenReturnFalse() {
+        IteratorArray it = new IteratorArray(new int[] {1, 3});
 
         it.iteratEorvenNumbers();
         int result = (Integer) it.iteratEorvenNumbers();

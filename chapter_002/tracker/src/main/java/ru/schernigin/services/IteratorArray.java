@@ -38,4 +38,13 @@ public class IteratorArray implements Iterator {
         }
         return values[index];
     }
+
+    public Object iteratorPrimes() {
+        for (int i = 0; i < values.length; i++) {
+            if (values[i] > 0 && values[i] % values[i] == 0) {
+                values[index] = values[i];
+            }
+        }
+        return values[index];
+    }
 }
