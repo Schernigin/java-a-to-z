@@ -39,6 +39,11 @@ public class IteratorArray implements Iterator {
         return values[index];
     }
 
+    /**
+     * In this method the iterator reaches the first prime number in the array and returns it
+     * @return first prime number in the array
+     */
+
     public Object iteratorPrimes() {
         for (int i = 0; i < values.length; i++) {
             if (values[i] > 1 && values[i] % values[i] == 0) {
