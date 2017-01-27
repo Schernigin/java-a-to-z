@@ -34,6 +34,7 @@ public class IteratorArray implements Iterator {
         for (int i = 0; i < values.length; i++) {
             if (values[i] % 2 == 0) {
                 values[index] = values[i];
+                break;
             }
         }
         return values[index];
@@ -48,6 +49,7 @@ public class IteratorArray implements Iterator {
         for (int i = 0; i < values.length; i++) {
             if (values[i] > 1 && values[i] % values[i] == 0) {
                 values[index] = values[i];
+                break;
             }
         }
         return values[index];
