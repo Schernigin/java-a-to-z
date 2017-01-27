@@ -59,7 +59,7 @@ public class IteratorArrayTest {
 
     @Test
     public void whenUseIteratEorvenNumbersThenReturnFalse() {
-        IteratorArray it = new IteratorArray(new int[] {1, 2, 1, 5});
+        IteratorArray it = new IteratorArray(new int[] {1, 4, 1, 5});
 
         int result = (Integer) it.iteratorPrimes();
 

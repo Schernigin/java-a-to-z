@@ -33,11 +33,11 @@ public class IteratorArray implements Iterator {
     public Object iteratEorvenNumbers() {
         for (int i = 0; i < values.length; i++) {
             if (values[i] % 2 == 0) {
-                values[index] = values[i];
+                index = values[i];
                 break;
             }
         }
-        return values[index];
+        return index;
     }
 
     /**
@@ -46,12 +46,6 @@ public class IteratorArray implements Iterator {
      */
 
     public Object iteratorPrimes() {
-        for (int i = 0; i < values.length; i++) {
-            if (values[i] > 1 && values[i] % values[i] == 0) {
-                values[index] = values[i];
-                break;
-            }
-        }
-        return values[index];
+        return null;
     }
 }
