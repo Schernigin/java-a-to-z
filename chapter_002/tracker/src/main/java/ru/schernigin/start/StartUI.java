@@ -4,25 +4,28 @@ import ru.schernigin.models.*;
 
 public class StartUI {
 	private Input input;
-	
-	public StartUI(Input input) {
+	private Tracker tracker;
+
+
+	private int[] range = new int[] {0, 1, 2, 3, 4, 5, 6};
+
+	public StartUI(Input input, Tracker tracker) {
 		this.input = input;
+		this.tracker = tracker;
 	}	
 
 	
 	public void init() {
-		Tracker tracker = new Tracker();
 		MenuTracker menu = new MenuTracker(tracker, this.input);
 		menu.fillActions();
 		do {
 			menu.showMenu();
-			int key = Integer.valueOf(input.ask("Select:"));
-			menu.select(key);
-		} while (!"y".equals(this.input.ask("Exit?: (y)")));
+			menu.select(input.ask("select : ", range));
+		} while (!"y".equals(this.input.ask("Exit? (y/n): ")));
 	} 
 
 	public static void main(String[] args)  {
-		Input input = new ConsoleInput();
-		new StartUI(input).init();
+		Input input = new ValidateInput();
+		new StartUI(input, new Tracker()).init();
 	}
 }
