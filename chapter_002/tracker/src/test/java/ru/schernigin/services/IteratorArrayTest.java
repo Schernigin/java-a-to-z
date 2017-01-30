@@ -58,12 +58,41 @@ public class IteratorArrayTest {
     }
 
     @Test
-    public void whenUseIteratEorvenNumbersThenReturnFalse() {
-        IteratorArray it = new IteratorArray(new int[] {1, 4, 1, 5});
+    public void whenInTheArrayHasNoPositiveNumberThenWillBeZero() {
+        IteratorArray it = new IteratorArray(new int[] {1, 3, 5, 3});
 
-        int result = (Integer) it.iteratorPrimes();
+        int result = (Integer) it.iteratEorvenNumbers();
 
-        assertThat(result, is(5));
+        assertThat(result, is(0));
+    }
+
+    @Test
+    public void whenEnterNumberThenIfNumberPrimeReturnTrue() {
+       IteratorArray it = new IteratorArray(new int[] {});
+
+       it.checkPrimeNumber(3);
+       boolean result = true;
+
+        assertThat(result, is(true));
+    }
+
+    @Test
+    public void whenEnterNumberThenIfNumberNotPrimeReturnFalse() {
+        IteratorArray it = new IteratorArray(new int[] {});
+
+        it.checkPrimeNumber(4);
+        boolean result = false;
+
+        assertThat(result, is(false));
+    }
+
+    @Test
+    public void WhenInTheArrayIsAPrimeNumberThenThisMethodShouldReturnIt() {
+        IteratorArray it = new IteratorArray(new int[] {1, 1, 6, 7});
+
+        int result = it.iteratorPrime();
+
+        assertThat(result, is(7));
     }
 
 }

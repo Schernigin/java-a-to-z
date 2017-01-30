@@ -18,11 +18,11 @@ public class IteratorArray implements Iterator {
     }
 
     public boolean hasNext() {
-        return values.length > index;
+        return this.values.length > index;
     }
 
     public Object next() {
-        return values[index++];
+        return this.values[index++];
     }
 
     /**
@@ -31,21 +31,43 @@ public class IteratorArray implements Iterator {
      */
 
     public Object iteratEorvenNumbers() {
-        for (int i = 0; i < values.length; i++) {
-            if (values[i] % 2 == 0) {
-                index = values[i];
+        for (int i = 0; i <this.values.length; i++) {
+            if (this.values[i] % 2 == 0) {
+                this.index = this.values[i];
+                break;
+            }
+
+        }
+        return this.index;
+    }
+
+    /**
+     * This method checks whether the number is prime.
+     * @return if prime number TRUE
+     */
+
+    public boolean checkPrimeNumber(int number) {
+        boolean result = true;
+            if (number <= 1) {
+                result = false;
+            } else {
+                for (int i = 2; i < Math.sqrt(number); i++){
+                    if (number % i == 0){
+                        result = false;
+                        break;
+                    }
+                }
+            }
+        return result;
+    }
+
+    public int iteratorPrime() {
+        for (int i = 0; i < this.values.length; i++){
+            if (checkPrimeNumber(this.values[i])) {
+                this.index = this.values[i];
                 break;
             }
         }
         return index;
-    }
-
-    /**
-     * In this method the iterator reaches the first prime number in the array and returns it
-     * @return first prime number in the array
-     */
-
-    public Object iteratorPrimes() {
-        return null;
     }
 }
