@@ -22,24 +22,17 @@ public class IteratorArray implements Iterator {
     }
 
     public Object next() {
-        return this.values[index++];
-    }
-
-    /**
-     * In this method, the iterator reaches the first positive number in the array, and returns it.
-     * @return The first positive number in the array.
-     */
-
-    public Object iteratEorvenNumbers() {
-        for (int i = 0; i <this.values.length; i++) {
+        int tmp = 0;
+        for (int i = index; i < this.values.length; i++) {
             if (this.values[i] % 2 == 0) {
-                this.index = this.values[i];
+                tmp = values[i];
+                index = values[i++];
                 break;
             }
-
         }
-        return this.index;
+        return tmp;
     }
+
 
     /**
      * This method checks whether the number is prime.
@@ -68,6 +61,6 @@ public class IteratorArray implements Iterator {
                 break;
             }
         }
-        return index;
+        return this.index;
     }
 }

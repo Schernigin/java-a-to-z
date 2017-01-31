@@ -50,18 +50,19 @@ public class IteratorArrayTest {
 
     @Test
     public void whenUseIteratEorvenNumbersThenReturnEorvenNumbers() {
-        IteratorArray it = new IteratorArray(new int[] {1, 3, 5, 2});
+        IteratorArray it = new IteratorArray(new int[] {2, 1, 4});
 
-        int result = (Integer) it.iteratEorvenNumbers();
+        it.next();
+        int result = (Integer) it.next();
 
-        assertThat(result, is(2));
+        assertThat(result, is(4));
     }
 
     @Test
     public void whenInTheArrayHasNoPositiveNumberThenWillBeZero() {
         IteratorArray it = new IteratorArray(new int[] {1, 3, 5, 3});
 
-        int result = (Integer) it.iteratEorvenNumbers();
+        int result = (Integer) it.next();
 
         assertThat(result, is(0));
     }
