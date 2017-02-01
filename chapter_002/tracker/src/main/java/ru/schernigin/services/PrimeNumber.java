@@ -53,7 +53,7 @@ public class PrimeNumber implements Iterator<Integer> {
         for (int i = this.index; i < this.values.length; i++){
             if (checkPrimeNumber(this.values[i])) {
                 tmp = this.values[i];
-                this.index = this.values[i++];
+                this.index = i + 1;
                 break;
             }
         }

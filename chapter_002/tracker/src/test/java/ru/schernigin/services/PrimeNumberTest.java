@@ -6,7 +6,10 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 /**
- * Created by USER on 01.02.2017.
+ * Class EvenNumberTest
+ * Author schernigin
+ * Sence 01.02.2017
+ * Version 1.0
  */
 public class PrimeNumberTest {
 
