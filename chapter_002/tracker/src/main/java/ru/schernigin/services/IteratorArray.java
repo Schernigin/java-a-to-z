@@ -10,27 +10,52 @@ import java.util.Iterator;
  */
 public class IteratorArray implements Iterator {
 
+    /**
+     * internal field.
+     */
+
     private final int[] values;
+
+    /**
+     * internal field.
+     */
+
     int index = 0;
+
+    /**
+     * Construktor.
+     * @param values
+     */
 
     public IteratorArray(final int[] values) {
         this.values = values;
     }
 
+    /**
+     * This method checks whether there are more values in the array.
+     * @return boolean
+     */
+
     public boolean hasNext() {
         return this.values.length > index;
     }
 
+    /**
+     * This method returns item, the carriage is moved forward.
+     * @return int
+     */
+
     public Object next() {
-        int tmp = 0;
-        for (int i = index; i < this.values.length; i++) {
-            if (this.values[i] % 2 == 0) {
-                tmp = values[i];
-                index = values[i++];
-                break;
-            }
-        }
-        return tmp;
+        return this.values[index++];
+    }
+
+    /**
+     * This method removes position and moves to the previous.
+     */
+
+    @Override
+    public void remove() {
+        this.values[index--] = 0;
     }
 
 
@@ -39,28 +64,7 @@ public class IteratorArray implements Iterator {
      * @return if prime number TRUE
      */
 
-    public boolean checkPrimeNumber(int number) {
-        boolean result = true;
-            if (number <= 1) {
-                result = false;
-            } else {
-                for (int i = 2; i < Math.sqrt(number); i++){
-                    if (number % i == 0){
-                        result = false;
-                        break;
-                    }
-                }
-            }
-        return result;
-    }
 
-    public int iteratorPrime() {
-        for (int i = 0; i < this.values.length; i++){
-            if (checkPrimeNumber(this.values[i])) {
-                this.index = this.values[i];
-                break;
-            }
-        }
-        return this.index;
-    }
+
+
 }
