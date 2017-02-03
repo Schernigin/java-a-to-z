@@ -1,7 +1,7 @@
 package ru.schernigin.services;
 
 /**
- * CLass ConvertIterator.
+ * class SimpleList.
  * @author schernigin
  * @since 02.02.2017
  * @version 1.0
@@ -22,7 +22,7 @@ public class SimpleList<T> {
 
     /**
      * this constructor sets the length of the array.
-     * @param size
+     * @param size length array.
      */
 
     public SimpleList(int size) {
@@ -31,7 +31,7 @@ public class SimpleList<T> {
 
     /**
      * add value to the array.
-     * @param value
+     * @param value type
      */
 
     public void add(T value) {
@@ -40,8 +40,8 @@ public class SimpleList<T> {
 
     /**
      * returns value of a specific cell.
-     * @param index
-     * @return
+     * @param index array.
+     * @return value.
      */
 
     public T get(int index) {
@@ -50,8 +50,8 @@ public class SimpleList<T> {
 
     /**
      * update of a specific cell.
-     * @param index
-     * @param value
+     * @param index array.
+     * @param value new.
      */
 
     public void update(int index, T value) {
@@ -60,7 +60,7 @@ public class SimpleList<T> {
 
     /**
      * delete a specific cell.
-     * @param index
+     * @param index array.
      */
 
     public void delete(int index) {
