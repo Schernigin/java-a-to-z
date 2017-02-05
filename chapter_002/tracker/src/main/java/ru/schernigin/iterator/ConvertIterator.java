@@ -1,4 +1,4 @@
-package ru.schernigin.services;//package ru.schernigin.services;
+package ru.schernigin.iterator;//package ru.schernigin.services;
 
 //import java.util.Iterator;
 
@@ -43,12 +43,12 @@ public class ConvertIterator implements UseIterator, Iterator<Integer> {
     @Override
     public Integer next() {
         Integer result;
-            if (inner.hasNext()) {
-                result = inner.next();
-            } else {
-                inner = it.next();
-                result = inner.next();
-            }
+        if (inner.hasNext()) {
+            result = inner.next();
+        } else {
+            inner = it.next();
+            result = inner.next();
+        }
         return result;
     }
 

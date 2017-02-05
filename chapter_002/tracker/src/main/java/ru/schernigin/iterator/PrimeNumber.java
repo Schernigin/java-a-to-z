@@ -1,4 +1,4 @@
-package ru.schernigin.services;
+package ru.schernigin.iterator;
 
 import java.util.Iterator;
 
@@ -65,7 +65,7 @@ public class PrimeNumber implements Iterator<Integer> {
      */
     @Override
     public void remove() {
-            this.values[index--] = 0;
+        this.values[index--] = 0;
     }
 
     /**

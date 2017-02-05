@@ -1,4 +1,4 @@
-package ru.schernigin.services;
+package ru.schernigin.generic;
 
 /**
  * interface Store.
