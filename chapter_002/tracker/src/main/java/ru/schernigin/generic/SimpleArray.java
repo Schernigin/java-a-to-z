@@ -1,12 +1,12 @@
 package ru.schernigin.generic;
 
 /**
- * class SimpleList.
+ * class SimpleArray.
  * @author schernigin
  * @since 02.02.2017
  * @version 1.0
  */
-public class SimpleList<T> {
+public class SimpleArray<T> {
 
     /**
      * internal field.
@@ -25,7 +25,7 @@ public class SimpleList<T> {
      * @param size length array.
      */
 
-    public SimpleList(int size) {
+    public SimpleArray(int size) {
         this.objects = new Object[size];
     }
 
