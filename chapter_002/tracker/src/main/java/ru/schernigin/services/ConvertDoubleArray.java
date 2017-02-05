@@ -22,15 +22,17 @@ public class ConvertDoubleArray {
 
 
     public boolean hasNext() {
-        return values.length > horizontal || values[0].length > vertical;
+        return this.values.length > this.horizontal || this.values[0].length > this.vertical;
     }
 
     public int next() {
-        int result;
+        int result = 0;
         if (hasNext()) {
-            result = values[vertical][horizontal + 1];
+            result = this.values[this.vertical][this.horizontal];
+            this.horizontal++;
         } else {
-            result = values[vertical + 1][horizontal];
+            result = this.values[this.vertical][this.horizontal];
+            this.vertical++;
         }
         return result;
     }

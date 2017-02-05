@@ -19,8 +19,8 @@ public class ConvertDoubleArrayTest {
         int[][] array = {{1, 2}, {3, 4}, {5, 6}};
         ConvertDoubleArray con = new ConvertDoubleArray(array);
 
-        //con.next();
-        //con.next();
+        con.next();
+        con.next();
         int result = con.next();
 
         assertThat(result, is(3));
