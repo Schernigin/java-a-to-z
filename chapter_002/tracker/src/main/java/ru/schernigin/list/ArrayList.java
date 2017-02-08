@@ -14,17 +14,17 @@ public class ArrayList<E> implements SimpleContainer {
 
 
     /**
-     *
+     * inner array.
      */
     private E[] array;
 
     /**
-     *
+     * size to array.
      */
     private int size = 100;
 
     /**
-     *
+     * index array.
      */
     private int index = 0;
 
@@ -33,7 +33,7 @@ public class ArrayList<E> implements SimpleContainer {
      */
    // public ArrayList(E[] array) {
     //    this.array[size] = (E) array;
-   // }
+    //}
 
     /**
      * this method add record.
