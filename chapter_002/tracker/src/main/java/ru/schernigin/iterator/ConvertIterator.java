@@ -1,8 +1,4 @@
-package ru.schernigin.iterator;//package ru.schernigin.services;
-
-//import java.util.Iterator;
-
-import ru.schernigin.services.UseIterator;
+package ru.schernigin.iterator;
 
 import java.util.Iterator;
 
