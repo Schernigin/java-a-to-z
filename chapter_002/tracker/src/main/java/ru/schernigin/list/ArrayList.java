@@ -29,11 +29,11 @@ public class ArrayList<E> implements SimpleContainer {
     private int index = 0;
 
     /**
-     * @param array
+     *
      */
-   // public ArrayList(E[] array) {
-    //    this.array[size] = (E) array;
-    //}
+    public ArrayList() {
+        this.array[size] = (E) array;
+    }
 
     /**
      * this method add record.
@@ -42,7 +42,7 @@ public class ArrayList<E> implements SimpleContainer {
     @Override
     public void add(Object e) {
         if (this.hasNext()){
-            this.array = Arrays.copyOf(this.array, this.size + 100);
+            this.array = Arrays.copyOf(this.array, (this.size * 3) / 2 + 1);
             this.array[index++] = (E) e;
         } else {
             this.array[index++] = (E) e;

@@ -1,8 +1,7 @@
 package ru.schernigin.list;
 
-import org.hamcrest.core.Is;
-import org.junit.Test;
 
+import org.junit.Test;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
@@ -16,11 +15,11 @@ public class ArrayListTest {
 
     @Test
     public void whenAddRecordThenRecord() {
-        ArrayList<String> arr = new  ArrayList();
+        ArrayList<String> arr = new  ArrayList<String>();
 
         arr.add("Test");
 
-        assertThat(arr.get(0), Is.<Object>is("Test"));
+        assertThat(arr.get(0), is("Test"));
     }
 
 
