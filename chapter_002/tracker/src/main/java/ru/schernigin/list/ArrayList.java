@@ -46,11 +46,18 @@ public class ArrayList<E> implements SimpleContainer {
     @Override
     public void add(Object e) {
         if (this.hasNext()){
-            this.array = Arrays.copyOf(this.array, (this.size * 3) / 2 + 1);
+            newLength();
             this.array[index++] = (E) e;
         } else {
             this.array[index++] = (E) e;
         }
+    }
+
+    /**
+     * the method increases the length of the array.
+     */
+    private void newLength() {
+        this.array = Arrays.copyOf(this.array, (this.size * 3) / 2 + 1);
     }
 
 
