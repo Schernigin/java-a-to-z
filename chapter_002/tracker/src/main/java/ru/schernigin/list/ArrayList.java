@@ -16,12 +16,12 @@ public class ArrayList<E> implements SimpleContainer {
     /**
      * inner array.
      */
-    private E[] array;
+    private Object[] array;
 
     /**
      * size to array.
      */
-    private int size = 100;
+    private static final int size = 100;
 
     /**
      * index array.
@@ -31,8 +31,12 @@ public class ArrayList<E> implements SimpleContainer {
     /**
      *
      */
+    public ArrayList(int size) {
+        this.array = new Object[size];
+    }
+
     public ArrayList() {
-        this.array[size] = (E) array;
+        this(size);
     }
 
     /**
@@ -62,10 +66,10 @@ public class ArrayList<E> implements SimpleContainer {
 
 
     /**
-     * @return
+     * @return true if no null.
      */
     public boolean hasNext() {
-        return this.array.length > this.size;
+        return this.array[array.length - 1] != null ;
     }
 
     /**
