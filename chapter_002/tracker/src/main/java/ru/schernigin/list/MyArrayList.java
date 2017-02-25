@@ -4,13 +4,13 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 /**
- * class ArrayList.
+ * class MyArrayList.
  * @author schernigin
  * @since 8.02.2017
  * @version 1.0
  */
 
-public class ArrayList<E> implements SimpleContainer {
+public class MyArrayList<E> implements SimpleContainer {
 
 
     /**
@@ -31,11 +31,11 @@ public class ArrayList<E> implements SimpleContainer {
     /**
      *
      */
-    public ArrayList(int size) {
+    public MyArrayList(int size) {
         this.array = new Object[size];
     }
 
-    public ArrayList() {
+    public MyArrayList() {
         this(size);
     }
 

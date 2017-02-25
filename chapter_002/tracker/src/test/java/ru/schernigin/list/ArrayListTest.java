@@ -13,14 +13,4 @@ import static org.junit.Assert.*;
  */
 public class ArrayListTest {
 
-    @Test
-    public void whenAddRecordThenRecord() {
-        ArrayList<String> arr = new  ArrayList();
-
-        arr.add("Test");
-
-        //assertThat(arr.get(0), is("Test"));
-    }
-
-
 }
