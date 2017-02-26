@@ -18,7 +18,7 @@ public class Duplicates {
 	 * @return array updated.
 	 */
 
-	public String[] delite(String[] array) {
+	public String[] duplicates(String[] array) {
 		
 		int counter = 0;
 		for(int i = 0; i < array.length; i++) {
