@@ -2,6 +2,8 @@ package ru.schernigin.arrays;
 
 import java.util.Arrays;
 
+import static java.util.Arrays.copyOf;
+
 
 /**
  * Class Duplicates
@@ -35,7 +37,7 @@ public class Duplicates {
 			}
 		}
 		String[] arrNew = new String [array.length - counter];
-		array = Arrays.copyOf(array, arrNew.length);
+		array = copyOf(array, arrNew.length);
 		return array;
 	}
 }
