@@ -14,7 +14,7 @@ public class MyStack<E> implements InerfaceSQ<E> {
     private Node<E> first;
 
     /**
-     * size stack
+     * size stack.
      */
     private int size = 0;
 

@@ -6,7 +6,10 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 /**
- * Created by USER on 06.03.2017.
+ * class MyStackTest
+ * @author Schernigin
+ * @since  06.03.2017.
+ * @version 1.0
  */
 public class MyStackTest {
 
