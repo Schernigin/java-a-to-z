@@ -33,15 +33,19 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
      */
     @Override
     public void add(E value) {
-
-        Record<E> element = new Record(value, this.first, this.last);
-            element.item = value;
-            if (this.last == null) {
-                this.first = element;
-                this.last = this.first;
+        if (isEmpty(this.first)) {
+            this.first = new Record<E>(value, null, null);
+        } else {
+            Record<E> record = new Record<E>(value, this.last, null);
+            if (isEmpty(this.last)) {
+                this.last.next = record;
+                this.last = record;
             } else {
-                this.last.next = element;
+                this.last = record;
+                this.first.next = this.last;
             }
+        }
+
         this.size++;
     }
 
@@ -52,13 +56,16 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
      */
     @Override
     public E get(int index) {
-        Record<E> elem = this.first;
-        if (index < this.size && size != -1) {
-            elem = elem.next;
-        } else {
-            throw new NoSuchElementException();
+        int counter = 0;
+        Record<E> element = this.first;
+        MyIterator iterator = new MyIterator();
+        if (this.size > index && index > -1) {
+            while (counter != index) {
+                element.item = iterator.next();
+                counter++;
+            }
         }
-        return elem.item;
+        return element.item;
     }
 
     /**
@@ -70,13 +77,28 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     }
 
     /**
+     * @return true if first no null.
+     */
+    public boolean isEmpty(Object o) {
+        return o == null;
+    }
+
+    /**
+     * @return size;
+     */
+
+    public int getSize() {
+        return this.size;
+    }
+
+    /**
      * class to create instances in which are stored the values of the list and links to the previous and next value.
      * @param <E>
      */
     private class Record<E> {
 
         /**
-         * reference for element.
+         * value to element.
          */
         private E item;
         /**
@@ -94,11 +116,11 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
          * @param next for next.
          * @param previous for previous.
          */
-        public Record(E element, Record<E> next, Record<E> previous) {
+        public Record(E element, Record<E> previous, Record<E> next ) {
 
             this.item = element;
-            this.next = next;
             this.previous = previous;
+            this.next = next;
         }
     }
 
@@ -108,16 +130,11 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     private class MyIterator implements Iterator{
 
         /**
-         * index
-         */
-        private int index = 0;
-
-        /**
          * @return true if the list contains values.
          */
         @Override
         public boolean hasNext() {
-            return this.index < size;
+            return last.next != null;
         }
 
         /**
@@ -125,11 +142,9 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
          */
         @Override
         public E next() {
-            if (this.index < size) {
-                return get(index++);
-            } else {
-                throw new NoSuchElementException();
-            }
+            E value = (E) first.item;
+            first = first.next;
+            return value;
         }
 
         /**

@@ -20,9 +20,7 @@ public class MyLinkedListTest {
         mylist.add("Sergey");
         mylist.add("House");
 
-        for (String i : mylist)
-            System.out.println(i);
 
-       // assertThat(mylist.get(1), is("Hello"));
+        System.out.println(mylist.get(1));
     }
 }

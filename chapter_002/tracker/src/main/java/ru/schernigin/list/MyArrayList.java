@@ -71,6 +71,11 @@ public class MyArrayList<E> implements SimpleContainer {
         return this.array[index];
     }
 
+    @Override
+    public boolean isEmpty(Object o) {
+        return o == null;
+    }
+
 
     /**
      * @return true if no null.

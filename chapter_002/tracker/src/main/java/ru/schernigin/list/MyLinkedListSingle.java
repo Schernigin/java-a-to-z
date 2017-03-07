@@ -49,7 +49,7 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
         MyIterator iterator = new MyIterator();
         int counter = 0;
             if (this.size >= index && index > -1) {
-                while (counter != index) {
+                while (counter != index + 1) {
                     elem.item = iterator.next();
                     counter++;
                 }
