@@ -12,15 +12,38 @@ import static org.junit.Assert.*;
  */
 public class MyLinkedListTest {
 
+
     @Test
     public void whenAddElementInListThenNevElement() {
         MyLinkedList<String> mylist = new MyLinkedList<String>();
 
-        mylist.add("Hello");
-        mylist.add("Sergey");
-        mylist.add("House");
 
+        mylist.add("1");
+        mylist.add("2");
+        mylist.add("3");
 
-        System.out.println(mylist.get(1));
+        assertThat(mylist.get(1), is("2"));
+    }
+
+    @Test
+    public void whenCallMethodGetThenReturnValueElementList() {
+        MyLinkedList<String> mylist = new MyLinkedList<String>();
+
+        mylist.add("hello");
+
+        String result = mylist.get(0);
+
+        assertThat(result, is("hello"));
+    }
+
+    @Test
+    public void whenCallMethodGetSizeThenReturnSizeList() {
+        MyLinkedList<String> mylist = new MyLinkedList<String>();
+
+        mylist.add("1");
+        mylist.add("2");
+        mylist.add("3");
+
+        assertThat(mylist.getSize(), is(3));
     }
 }
