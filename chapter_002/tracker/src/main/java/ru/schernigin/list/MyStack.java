@@ -41,6 +41,7 @@ public class MyStack<E> implements InerfaceSQ<E> {
     @Override
     public E get() {
         E value = this.first.item;
+        this.first.item = null;
         this.first = this.first.next;
         if (value != null) {
             return value;
