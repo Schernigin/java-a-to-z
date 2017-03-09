@@ -14,12 +14,14 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
     /**
      * a reference to the first value.
      */
-    private Node<E> element;
+    private Node<E> first;
+
+    private Node<E> next;
 
     /**
      * list size.
      */
-    private int size = -1;
+    private int size = 0;
 
 
     /**
@@ -28,12 +30,14 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
      */
     @Override
     public void add(E value) {
-
-        if (isEmpty(this.element)) {
-            this.element = new Node<E>(value, null);
+        if (isEmpty(this.first)) {
+            this.first = new Node<E>(value, this.first);
+        } else if (isEmpty(this.next)) {
+            this.next = new Node<E>(value, null);
+            this.first.next = this.next;
         } else {
-            Node<E> elem = new Node<E>(value, null);
-            this.element.next = elem;
+            this.next.next = new Node<E>(value, null);
+            this.next = this.next.next;
         }
         this.size++;
     }
@@ -45,18 +49,13 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
      */
     @Override
     public E get(int index) {
-        Node<E> elem = this.element;
-        MyIterator iterator = new MyIterator();
+        Node<E> elem = this.first;
         int counter = 0;
-            if (this.size >= index && index > -1) {
-                while (counter != index + 1) {
-                    elem.item = iterator.next();
-                    counter++;
-                }
-            } else {
-                throw new NoSuchElementException();
-            }
-            return elem.item;
+        while (counter != index) {
+            elem = elem.next;
+            counter++;
+        }
+        return elem.item;
     }
 
     /**
@@ -86,7 +85,7 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
          */
         @Override
         public boolean hasNext() {
-            return element.next != null;
+            return first.next != null;
         }
 
         /**
@@ -94,8 +93,8 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
          */
         @Override
         public E next() {
-            E value = element.item;
-            element = element.next;
+            E value = first.item;
+            first = first.next;
             return value;
         }
 

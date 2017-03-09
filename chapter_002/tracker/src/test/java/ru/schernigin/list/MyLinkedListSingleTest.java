@@ -14,10 +14,10 @@ public class MyLinkedListSingleTest {
 
     @Test
     public void whenAddItemInListThenListNoNull() {
-        list.add("Hello");
-        list.add("By");
-        list.add("Welcome");
-        list.add("World");
+        list.add("1");
+        list.add("2");
+        list.add("3");
+        list.add("4");
 
         System.out.println(list.get(0));
         System.out.println(list.get(1));

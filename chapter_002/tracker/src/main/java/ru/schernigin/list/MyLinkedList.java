@@ -1,7 +1,6 @@
 package ru.schernigin.list;
 
 import java.util.Iterator;
-import java.util.NoSuchElementException;
 
 
 /**
@@ -25,7 +24,7 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     /**
      * the value of the length of the list.
      */
-    int size = 0;
+    private int size = 0;
 
     /**
      * adds value to the list.
@@ -35,20 +34,15 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     public void add(E value) {
         if (isEmpty(this.first)) {
             this.first = new Record<E>(value, this.first, this.first);
+        } else if (isEmpty(this.last)) {
+            this.last = new Record<E>(value, this.first, null);
+            this.first.next = this.last;
         } else {
-            if (isEmpty(this.last)) {
-                Record<E> record = new Record<E>(value, this.first, null);
-                this.last = record;
-                this.first.next = record;
-            } else {
-                Record<E> record = new Record<E>(value, this.last, null);
-                this.last.next = record;
-                this.last = record;
-            }
+            this.last.next = new Record<E>(value, this.last, null);
+            this.last = this.last.next;
         }
-
         this.size++;
-    }
+}
 
     /**
      * returns a value from a list.
@@ -125,7 +119,7 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     /**
      * class iterator.
      */
-    private class MyIterator implements Iterator{
+    private class MyIterator<E> implements Iterator<E>{
 
         /**
          * @return true if the list contains values.
@@ -140,9 +134,7 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
          */
         @Override
         public E next() {
-            E value = (E) first.item;
-            first = first.next;
-            return value;
+            return null;
         }
 
         /**
