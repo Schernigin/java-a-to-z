@@ -44,6 +44,7 @@ public class MyStack<E> implements InerfaceSQ<E> {
         this.first.item = null;
         this.first = this.first.next;
         if (value != null) {
+            this.size--;
             return value;
         } else {
             throw new NullPointerException("this Stack null");
