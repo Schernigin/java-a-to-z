@@ -16,7 +16,7 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
      */
     private Node<E> first;
 
-    private Node<E> next;
+    private Node<E> last;
 
     /**
      * list size.
@@ -32,12 +32,12 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
     public void add(E value) {
         if (isEmpty(this.first)) {
             this.first = new Node<E>(value, this.first);
-        } else if (isEmpty(this.next)) {
-            this.next = new Node<E>(value, null);
-            this.first.next = this.next;
+        } else if (isEmpty(this.last)) {
+            this.last = new Node<E>(value, null);
+            this.first.next = this.last;
         } else {
-            this.next.next = new Node<E>(value, null);
-            this.next = this.next.next;
+            this.last.next = new Node<E>(value, null);
+            this.last = this.last.next;
         }
         this.size++;
     }

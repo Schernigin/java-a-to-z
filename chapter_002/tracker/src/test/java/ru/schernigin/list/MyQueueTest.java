@@ -2,26 +2,45 @@ package ru.schernigin.list;
 
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 /**
- * Created by USER on 07.03.2017.
+ *Class QueueTest.
+ * @author Schernigin.
+ * @since  06.03.2017.
+ * @version 1.0
  */
 public class MyQueueTest {
 
-    MyQueue<String> queue = new MyQueue<String>();
+    private MyQueue<String> queue = new MyQueue<String>();
 
     @Test
     public void whenCallMethodAddThenQueueNoNull() {
+
+        this.queue.add("1");
+        this.queue.add("2");
+        this.queue.get();
+
+        assertThat(this.queue.get(), is("2"));
+    }
+
+    @Test
+    public void whenCallMethodShowFirstThenShowFirstValueQueue() {
         this.queue.add("1");
         this.queue.add("2");
         this.queue.add("3");
-        this.queue.add("4");
 
-        System.out.println(this.queue.get());
-        System.out.println(this.queue.get());
-        System.out.println(this.queue.get());
-        System.out.println(this.queue.get());
+        assertThat(this.queue.showFirst(), is("1"));
+    }
+
+    @Test
+    public void whenCallMethodGetSizeThenSizeQueue() {
+        this.queue.add("1");
+        this.queue.add("1");
+        this.queue.add("1");
+
+        assertThat(this.queue.getSize(), is(3));
     }
 
 }
