@@ -19,12 +19,10 @@ public class MyLinkedListSingleTest {
         list.add("3");
         list.add("4");
 
-        System.out.println(list.get(0));
-        System.out.println(list.get(1));
-        System.out.println(list.get(2));
-        System.out.println(list.get(3));
+        for (String i: list)
+            System.out.println(i);
 
-        //assertThat(list.get(1), is("By"));
+        assertThat(list.get(1), is("2"));
     }
 
 

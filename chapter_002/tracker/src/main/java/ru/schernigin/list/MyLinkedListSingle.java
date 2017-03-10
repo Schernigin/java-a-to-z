@@ -50,10 +50,8 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
     @Override
     public E get(int index) {
         Node<E> elem = this.first;
-        int counter = 0;
-        while (counter != index) {
+        for (int i = 0; i != index; i++){
             elem = elem.next;
-            counter++;
         }
         return elem.item;
     }
@@ -73,35 +71,6 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
     @Override
     public Iterator<E> iterator() {
         return new MyIterator();
-    }
-
-    /**
-     * Class Iterator.
-     */
-    private class MyIterator implements Iterator {
-
-        /**
-         * @return true if reference no null.
-         */
-        @Override
-        public boolean hasNext() {
-            return first.next != null;
-        }
-
-        /**
-         * @return list value, and shifts the carriage to the right.
-         */
-        @Override
-        public E next() {
-            E value = first.item;
-            first = first.next;
-            return value;
-        }
-
-        @Override
-        public void remove() {
-
-        }
     }
 
     /**
@@ -131,5 +100,29 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
             this.item = value;
             this.next = next;
         }
+    }
+
+    private class MyIterator implements Iterator<E> {
+
+        private Node<E> tmp = first;
+
+        private int index;
+
+        @Override
+        public boolean hasNext() {
+            return this.tmp.next != null;
+        }
+
+        @Override
+        public E next() {
+            this.index++;
+            this.tmp = this.tmp.next;
+            return  this.tmp.item;
+        }
+
+        @Override
+        public void remove() {
+        }
+
     }
 }

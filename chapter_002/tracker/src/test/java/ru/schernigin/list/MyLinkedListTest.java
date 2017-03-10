@@ -17,7 +17,6 @@ public class MyLinkedListTest {
     public void whenAddElementInListThenNevElement() {
         MyLinkedList<String> mylist = new MyLinkedList<String>();
 
-
         mylist.add("1");
         mylist.add("2");
         mylist.add("3");
