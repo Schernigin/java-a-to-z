@@ -33,7 +33,7 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     @Override
     public void add(E value) {
         if (isEmpty(this.first)) {
-            this.first = new Record<E>(value, this.first, this.first);
+            this.first = new Record<E>(value, null, null);
         } else if (isEmpty(this.last)) {
             this.last = new Record<E>(value, this.first, null);
             this.first.next = this.last;
@@ -51,11 +51,9 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
      */
     @Override
     public E get(int index) {
-        int counter = 0;
         Record<E> element = this.first;
-        while (counter != index) {
+        for (int i = 0; i != index; i++){
             element = element.next;
-            counter++;
         }
         return element.item;
     }
@@ -116,34 +114,29 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
         }
     }
 
-    /**
-     * class iterator.
-     */
-    private class MyIterator<E> implements Iterator<E>{
+    private class MyIterator implements Iterator<E> {
 
-        /**
-         * @return true if the list contains values.
-         */
+        private Record<E> tmp = first;
+
+        private int index;
+
         @Override
         public boolean hasNext() {
-            return last.next != null;
+            return this.tmp.next != null;
         }
 
-        /**
-         * @return next element.
-         */
         @Override
         public E next() {
-            return null;
+            this.index++;
+            this.tmp = this.tmp.next;
+            return  this.tmp.item;
         }
 
-        /**
-         * delete element.
-         */
         @Override
         public void remove() {
-
         }
+
     }
+
 }
 
