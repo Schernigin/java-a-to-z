@@ -3,7 +3,7 @@ package ru.schernigin.map;
 import java.util.Calendar;
 
 /**
- *  User Class to map realization  .
+ *  User Class to map realization.
  * @author schernigin.
  * @since 13.02.2017.
  * @version 1.0
