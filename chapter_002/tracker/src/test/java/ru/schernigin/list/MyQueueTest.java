@@ -16,31 +16,23 @@ public class MyQueueTest {
     private MyQueue<String> queue = new MyQueue<String>();
 
     @Test
-    public void whenCallMethodAddThenQueueNoNull() {
+    public void whenCallAddThenQueueNoNull() {
+        MyQueue<String> test = new MyQueue<String>();
 
-        this.queue.add("1");
-        this.queue.add("2");
-        this.queue.get();
+        test.push("1");
 
-        assertThat(this.queue.get(), is("2"));
+        assertThat(test.pool(), is("1"));
     }
 
     @Test
-    public void whenCallMethodShowFirstThenShowFirstValueQueue() {
-        this.queue.add("1");
-        this.queue.add("2");
-        this.queue.add("3");
+    public void whenCallPoolThenReturnFirstAddedValue() {
+        MyQueue<String> test = new MyQueue<String>();
 
-        assertThat(this.queue.showFirst(), is("1"));
-    }
+        test.push("1");
+        test.push("2");
+        String result = test.pool();
 
-    @Test
-    public void whenCallMethodGetSizeThenSizeQueue() {
-        this.queue.add("1");
-        this.queue.add("1");
-        this.queue.add("1");
-
-        assertThat(this.queue.getSize(), is(3));
+        assertThat(result, is("1"));
     }
 
 }
