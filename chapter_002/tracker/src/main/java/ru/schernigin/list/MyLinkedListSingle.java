@@ -116,8 +116,9 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
         @Override
         public E next() {
             this.index++;
+            E value = this.tmp.item;
             this.tmp = this.tmp.next;
-            return  this.tmp.item;
+            return  value;
         }
 
         @Override

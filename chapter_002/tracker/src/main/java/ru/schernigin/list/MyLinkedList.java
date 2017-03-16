@@ -116,20 +116,22 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
 
     private class MyIterator implements Iterator<E> {
 
-        private Record<E> tmp = first;
-
         private int index;
+
+        private Record<E> tmp = first;
 
         @Override
         public boolean hasNext() {
-            return this.tmp.next != null;
+            Record<E> tmp = first;
+            return tmp.next != null;
         }
 
         @Override
         public E next() {
             this.index++;
+            E value = this.tmp.item;
             this.tmp = this.tmp.next;
-            return  this.tmp.item;
+            return value;
         }
 
         @Override
