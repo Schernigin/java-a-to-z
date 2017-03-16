@@ -81,6 +81,11 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
         return this.size;
     }
 
+    /**
+     * @param first reference to first value in list.
+     * @return true if looped.
+     */
+
     boolean hasCycle(Record<E> first) {
         boolean result = false;
         for (int i = 0; i <= this.size; i++) {
