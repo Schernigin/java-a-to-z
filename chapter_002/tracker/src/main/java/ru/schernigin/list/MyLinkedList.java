@@ -81,6 +81,17 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
         return this.size;
     }
 
+    boolean hasCycle(Record<E> first) {
+        boolean result = false;
+        for (int i = 0; i <= this.size; i++) {
+            if (first.next == first.next.next){
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
     /**
      * class to create instances in which are stored the values of the list and links to the previous and next value.
      * @param <E>
