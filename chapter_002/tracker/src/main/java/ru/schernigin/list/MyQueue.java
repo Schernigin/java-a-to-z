@@ -8,10 +8,17 @@ package ru.schernigin.list;
  */
 public class MyQueue<E>  extends MyLinkedList<E> {
 
+    /**
+     * Added value.
+     * @param value
+     */
     public void push(E value) {
         super.add(value);
     }
 
+    /**
+     * @return the first value added.
+     */
     public E pool() {
         return super.get(0);
     }
