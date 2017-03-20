@@ -47,5 +47,5 @@ CREATE TABLE comments_request (
 
 CREATE TABLE attached_files (
   id SERIAL PRIMARY KEY,
-  link CHARACTER VARYING (2000),
+  link CHARACTER VARYING (2000)
 );
