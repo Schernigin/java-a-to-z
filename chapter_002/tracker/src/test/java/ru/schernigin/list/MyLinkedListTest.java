@@ -12,7 +12,6 @@ import static org.junit.Assert.*;
  */
 public class MyLinkedListTest {
 
-
     @Test
     public void whenAddElementInListThenNevElement() {
         MyLinkedList<String> mylist = new MyLinkedList<String>();

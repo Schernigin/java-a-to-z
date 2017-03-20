@@ -1,0 +1,6 @@
+INSERT INTO users (login, password, date) VALUES ('user1', '123', '3.20.2017');
+INSERT INTO users (login, password, date) VALUES ('user2', '123', '3.18.2017');
+INSERT INTO users (login, password, date) VALUES ('user3', '123', '1.20.2017');
+
+INSERT INTO request(name_request, descripton, create_data)
+VALUES ('Breaking', 'There must be a description', '2017-03-21');
