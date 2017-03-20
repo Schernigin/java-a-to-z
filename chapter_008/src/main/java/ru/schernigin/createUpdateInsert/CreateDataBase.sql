@@ -1,2 +1,1 @@
---crate database
-create database users;
+CREATE DATABASE java_a_to_z;
