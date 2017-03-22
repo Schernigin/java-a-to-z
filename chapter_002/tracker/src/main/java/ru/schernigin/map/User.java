@@ -42,11 +42,11 @@ public class User {
 
         Calendar calendar = new GregorianCalendar();
 
-        Map<User, String> map = new HashMap();
+        Map<User, Object> map = new HashMap();
 
-        map.put(new User("Sergey", 2, calendar), "1");
-        map.put(new User("Sergey", 2, calendar), "2");
-        map.put(new User("Sergey", 2, calendar), "3");
+        map.put(new User("Sergey", 2, calendar), new Object());
+        map.put(new User("Sergey", 2, calendar), new Object());
+        map.put(new User("Sergey", 2, calendar), new Object());
 
         System.out.println(map);
     }
