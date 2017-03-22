@@ -90,5 +90,4 @@ public class EvenNumberTest {
 
         assertThat(result, is(0));
     }
-
 }

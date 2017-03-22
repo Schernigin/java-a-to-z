@@ -7,4 +7,5 @@ package ru.schernigin.generic;
  * @version 1.0
  */
 public class RoleStore extends BaseStore<Role> {
+
 }

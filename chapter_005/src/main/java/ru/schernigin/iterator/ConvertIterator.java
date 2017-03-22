@@ -50,6 +50,5 @@ public class ConvertIterator implements UseIterator, Iterator<Integer> {
 
     @Override
     public void remove() {
-
     }
 }

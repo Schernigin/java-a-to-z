@@ -58,13 +58,4 @@ public class IteratorArray implements Iterator {
         this.values[index--] = 0;
     }
 
-
-    /**
-     * This method checks whether the number is prime.
-     * @return if prime number TRUE
-     */
-
-
-
-
 }

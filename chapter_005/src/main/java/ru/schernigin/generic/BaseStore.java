@@ -75,4 +75,5 @@ public abstract class BaseStore<T extends Base> implements Store<T> {
         }
         return result;
     }
+
 }

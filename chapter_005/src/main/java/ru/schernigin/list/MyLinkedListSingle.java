@@ -23,7 +23,6 @@ public class MyLinkedListSingle<E> implements SimpleContainer<E> {
      */
     private int size = 0;
 
-
     /**
      * method to add value
      * @param value list

@@ -66,4 +66,5 @@ public class SimpleArray<T> {
     public void delete(int index) {
         this.objects[index] = null;
     }
+
 }

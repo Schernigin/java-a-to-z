@@ -86,4 +86,5 @@ public class PrimeNumber implements Iterator<Integer> {
         }
         return result;
     }
+
 }

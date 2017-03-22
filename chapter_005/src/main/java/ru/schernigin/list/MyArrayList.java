@@ -12,7 +12,6 @@ import java.util.Iterator;
 
 public class MyArrayList<E> implements SimpleContainer {
 
-
     /**
      * inner array.
      */

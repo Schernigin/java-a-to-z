@@ -34,5 +34,4 @@ public class MyQueueTest {
 
         assertThat(result, is("1"));
     }
-
 }

@@ -8,4 +8,5 @@ public interface InerfaceSQ<E> {
     void add(E value);
     E get();
     boolean isEmpty(Object o);
+
 }

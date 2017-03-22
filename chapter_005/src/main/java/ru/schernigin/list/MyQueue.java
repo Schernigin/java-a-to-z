@@ -22,5 +22,4 @@ public class MyQueue<E>  extends MyLinkedList<E> {
     public E pool() {
         return super.get(0);
     }
-
 }

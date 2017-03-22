@@ -42,7 +42,7 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
             this.last = this.last.next;
         }
         this.size++;
-}
+    }
 
     /**
      * returns a value from a list.

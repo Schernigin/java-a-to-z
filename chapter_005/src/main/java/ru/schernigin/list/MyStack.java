@@ -22,4 +22,5 @@ public class MyStack<E> extends MyLinkedList<E> {
     public E pool() {
         return super.get(super.getSize() - 1);
     }
+
 }

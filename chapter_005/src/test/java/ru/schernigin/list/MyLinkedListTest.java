@@ -44,4 +44,5 @@ public class MyLinkedListTest {
 
         assertThat(mylist.getSize(), is(3));
     }
+
 }

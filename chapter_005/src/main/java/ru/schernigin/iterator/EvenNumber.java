@@ -14,6 +14,7 @@ public class EvenNumber implements Iterator<Integer> {
      *internal field.
      */
     private final int[] values;
+
     /**
      *internal field.
      */

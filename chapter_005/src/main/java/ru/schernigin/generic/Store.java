@@ -15,4 +15,5 @@ public interface Store<T extends Base> {
     void update(String id, T value);
 
     void  delete(String id);
+
 }

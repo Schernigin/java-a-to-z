@@ -26,5 +26,4 @@ public class ConvertDoubleArrayTest {
         assertThat(result, is(3));
 
     }
-
 }

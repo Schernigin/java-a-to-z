@@ -24,7 +24,4 @@ public class MyLinkedListSingleTest {
 
         assertThat(list.get(1), is("2"));
     }
-
-
-
 }

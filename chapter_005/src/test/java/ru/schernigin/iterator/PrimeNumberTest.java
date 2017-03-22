@@ -69,5 +69,4 @@ public class PrimeNumberTest {
 
         assertThat(result, is(false));
     }
-
 }

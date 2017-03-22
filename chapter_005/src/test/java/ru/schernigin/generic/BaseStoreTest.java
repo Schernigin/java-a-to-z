@@ -16,5 +16,4 @@ public class BaseStoreTest {
     public void whenUseMethodAddThenAddsEntry() {
 
     }
-
 }

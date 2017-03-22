@@ -33,5 +33,4 @@ public class MyStackTest {
 
         assertThat(test.pool(), is("2"));
     }
-
 }
