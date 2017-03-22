@@ -4,7 +4,7 @@ INSERT INTO role_rights (rules) VALUES ('view');
 
 INSERT INTO role (role, rules_id) VALUES ('admin', 1);
 INSERT INTO role (role, rules_id) VALUES ('user', 2);
-INSERT INTO role (role, rules_id) VALUES ('guest', 2);
+INSERT INTO role (role, rules_id) VALUES ('guest', 3);
 
 INSERT  INTO category_request (category) VALUES ('current');
 INSERT  INTO category_request (category) VALUES ('urgent');
