@@ -23,7 +23,7 @@ public class MyQueue<E>  extends MyLinkedList<E> implements InerfaceSQ<E>{
      */
     public E pool() {
         E tmp = super.get(0);
-        forQueue.remove(0);
+        forQueue.removeFirt();
         return tmp;
     }
 }

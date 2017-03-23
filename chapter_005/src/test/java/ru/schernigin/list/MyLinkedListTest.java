@@ -52,7 +52,7 @@ public class MyLinkedListTest {
         myList.add("1");
         myList.add("2");
         myList.add("3");
-        myList.remove(0);
+        myList.removeFirt();
 
         assertThat(myList.get(0), is("2"));
     }
@@ -64,8 +64,20 @@ public class MyLinkedListTest {
         myList.add("1");
         myList.add("2");
         myList.add("3");
-        myList.remove(1);
+        myList.removeMiddle(1);
 
         assertThat(myList.get(1), is("3"));
+    }
+
+    @Test
+    public void whenCallMethodRemoveThenDeleteElementLast() {
+        MyLinkedList<String> myList = new MyLinkedList<String>();
+
+        myList.add("1");
+        myList.add("2");
+        myList.add("3");
+        myList.removeLast();
+
+        assertThat(myList.get(1), is("2"));
     }
 }

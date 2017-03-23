@@ -23,7 +23,7 @@ public class MyStack<E> extends MyLinkedList<E> implements InerfaceSQ<E> {
      */
     public E pool() {
         E tmp = super.get(super.getSize() - 1);
-        forStack.remove(super.getSize() - 1);
+        forStack.removeLast();
         return tmp;
     }
 

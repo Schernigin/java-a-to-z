@@ -30,6 +30,8 @@ public class MyQueueTest {
 
         test.push("1");
         test.push("2");
+        test.push("3");
+        test.push("4");
         String result = test.pool();
 
         assertThat(result, is("1"));

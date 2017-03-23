@@ -59,39 +59,44 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     }
 
     /**
-     * delete element.
+     * removes an element in the middle of the list
      * @param index list.
      */
-    public void remove(int index) {
+    public void removeMiddle(int index) {
         Record<E> current = first;
         int counter = 0;
-        while (!isEmpty(counter)) {
+        while (!isEmpty(current)) {
             if (counter == index) {
-                Record<E> next = current.next;
-                Record<E> prev = current.previous;
-                if (next == null && prev == null) {
-                    current.item = null;
-                    next = null;
-                    prev = null;
-                } else if (next == null) {
-                    last.item = null;
-                    prev.next = null;
-                    last = prev;
-                } else if (prev == null) {
-                    first.item = null;
-                    next.previous = null;
-                    first = next;
-                } else {
-                    current.item = null;
-                    prev.next = next;
-                    next.previous = prev;
-                }
-                break;
+                current.previous.next = current.next;
+                current.next.previous = current.previous;
+                current.next = null;
+                current.previous = null;
+                current.item = null;
             }
             current = current.next;
             counter++;
         }
         this.size--;
+    }
+
+    /**
+     * removes an the first element in of the list.
+     */
+    public void removeFirt() {
+        if (!isEmpty(this.first)) {
+            this.first = this.first.next;
+            this.first.previous = null;
+        }
+    }
+
+    /**
+     * removes an the last element in of the list.
+     */
+    public void removeLast() {
+        if (!isEmpty(this.last)) {
+            this.last = this.last.previous;
+            this.last.next = null;
+        }
     }
 
     /**
