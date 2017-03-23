@@ -6,11 +6,13 @@ package ru.schernigin.list;
  * @since  06.03.2017.
  * @version 1.0
  */
-public class MyQueue<E>  extends MyLinkedList<E> {
+public class MyQueue<E>  extends MyLinkedList<E> implements InerfaceSQ<E>{
+
+    MyLinkedList<E> forQueue = new MyLinkedList<E>();
 
     /**
      * Added value.
-     * @param value
+     * @param value value.
      */
     public void push(E value) {
         super.add(value);
@@ -20,6 +22,8 @@ public class MyQueue<E>  extends MyLinkedList<E> {
      * @return the first value added.
      */
     public E pool() {
-        return super.get(0);
+        E tmp = super.get(0);
+        forQueue.remove(0);
+        return tmp;
     }
 }

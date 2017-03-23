@@ -45,4 +45,27 @@ public class MyLinkedListTest {
         assertThat(mylist.getSize(), is(3));
     }
 
+    @Test
+    public void whenCallMethodRemoveThenDeleteElementFirst() {
+        MyLinkedList<String> myList = new MyLinkedList<String>();
+
+        myList.add("1");
+        myList.add("2");
+        myList.add("3");
+        myList.remove(0);
+
+        assertThat(myList.get(0), is("2"));
+    }
+
+    @Test
+    public void whenCallMethodRemoveThenDeleteElementMiddle() {
+        MyLinkedList<String> myList = new MyLinkedList<String>();
+
+        myList.add("1");
+        myList.add("2");
+        myList.add("3");
+        myList.remove(1);
+
+        assertThat(myList.get(1), is("3"));
+    }
 }

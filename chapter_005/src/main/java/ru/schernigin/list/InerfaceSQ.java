@@ -5,8 +5,6 @@ package ru.schernigin.list;
  */
 public interface InerfaceSQ<E> {
 
-    void add(E value);
-    E get();
-    boolean isEmpty(Object o);
-
+    void push(E value);
+    E pool();
 }

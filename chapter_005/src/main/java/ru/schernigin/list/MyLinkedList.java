@@ -14,12 +14,12 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     /**
      * reference to the first element.
      */
-    private Record<E> first;
+    protected Record<E> first;
 
     /**
      * reference to the last element.
      */
-    private Record<E> last;
+    protected Record<E> last;
 
     /**
      * the value of the length of the list.
@@ -59,6 +59,58 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     }
 
     /**
+     * delete element.
+     * @param index list.
+     */
+    public void remove(int index) {
+        Record<E> current = first;
+        int counter = 0;
+        while (!isEmpty(counter)) {
+            if (counter == index) {
+                Record<E> next = current.next;
+                Record<E> prev = current.previous;
+                if (next == null && prev == null) {
+                    current.item = null;
+                    next = null;
+                    prev = null;
+                } else if (next == null) {
+                    last.item = null;
+                    prev.next = null;
+                    last = prev;
+                } else if (prev == null) {
+                    first.item = null;
+                    next.previous = null;
+                    first = next;
+                } else {
+                    current.item = null;
+                    prev.next = next;
+                    next.previous = prev;
+                }
+                break;
+            }
+            current = current.next;
+            counter++;
+        }
+        this.size--;
+    }
+
+    /**
+     * @param first reference to first value in list.
+     * @return true if looped.
+     */
+    boolean hasCycle(Record<E> first) {
+        boolean result = false;
+        for (int i = 0; i <= this.size; i++) {
+            if (first.next == first.next.next){
+                result = true;
+                break;
+            }
+        }
+        return result;
+    }
+
+
+    /**
      * @return iterator;
      */
     @Override
@@ -76,32 +128,15 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
     /**
      * @return size;
      */
-
     public int getSize() {
         return this.size;
-    }
-
-    /**
-     * @param first reference to first value in list.
-     * @return true if looped.
-     */
-
-    boolean hasCycle(Record<E> first) {
-        boolean result = false;
-        for (int i = 0; i <= this.size; i++) {
-            if (first.next == first.next.next){
-                result = true;
-                break;
-            }
-        }
-        return result;
     }
 
     /**
      * class to create instances in which are stored the values of the list and links to the previous and next value.
      * @param <E>
      */
-    private class Record<E> {
+    protected class Record<E> {
 
         /**
          * value to element.
@@ -138,20 +173,22 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
 
         @Override
         public boolean hasNext() {
-            Record<E> tmp = first;
-            return tmp.next != null;
+            return this.tmp != null;
         }
 
         @Override
         public E next() {
-            this.index++;
             E value = this.tmp.item;
             this.tmp = this.tmp.next;
+            this.index++;
             return value;
         }
 
         @Override
         public void remove() {
+
+
+
         }
 
     }

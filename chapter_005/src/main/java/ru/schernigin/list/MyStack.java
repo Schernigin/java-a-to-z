@@ -6,7 +6,9 @@ package ru.schernigin.list;
  * @since  06.03.2017.
  * @version 1.0
  */
-public class MyStack<E> extends MyLinkedList<E> {
+public class MyStack<E> extends MyLinkedList<E> implements InerfaceSQ<E> {
+
+    MyLinkedList<E> forStack = new MyLinkedList<E>();
 
     /**
      * Added value.
@@ -20,7 +22,9 @@ public class MyStack<E> extends MyLinkedList<E> {
      * @return the last value added.
      */
     public E pool() {
-        return super.get(super.getSize() - 1);
+        E tmp = super.get(super.getSize() - 1);
+        forStack.remove(super.getSize() - 1);
+        return tmp;
     }
 
 }
