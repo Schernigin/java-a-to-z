@@ -28,10 +28,11 @@ public class User {
 
     /**
      * constructor.
-     * @param name
-     * @param children
-     * @param birthday
+     * @param name name.
+     * @param children children.
+     * @param birthday birthday
      */
+
     public User(String name, int children, Calendar birthday) {
         this.name = name;
         this.children = children;
@@ -44,10 +45,14 @@ public class User {
 
         Map<User, Object> map = new HashMap();
 
-        map.put(new User("Sergey", 2, calendar), new Object());
-        map.put(new User("Sergey", 2, calendar), new Object());
-        map.put(new User("Sergey", 2, calendar), new Object());
+        User user1 = new User("Sergey", 2, calendar);
+        User user2 = new User("Sergey", 2, calendar);
+        User user3 = new User("Sergey", 2, calendar);
 
-        System.out.println(map);
+        map.put(user1, new Object());
+        map.put(user2, new Object());
+        map.put(user3, new Object());
+
+        System.out.print(map);
     }
 }
