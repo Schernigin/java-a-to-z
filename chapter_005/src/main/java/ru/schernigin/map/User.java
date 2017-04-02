@@ -39,20 +39,21 @@ public class User {
         this.birthday = birthday;
     }
 
-    public static void main(String[] args) {
 
-        Calendar calendar = new GregorianCalendar();
+    public String getName() {
+        return name;
+    }
 
-        Map<User, Object> map = new HashMap();
+    public int getChildren() {
+        return children;
+    }
 
-        User user1 = new User("Sergey", 2, calendar);
-        User user2 = new User("Sergey", 2, calendar);
-        User user3 = new User("Sergey", 2, calendar);
+    public Calendar getBirthday() {
+        return birthday;
+    }
 
-        map.put(user1, new Object());
-        map.put(user2, new Object());
-        map.put(user3, new Object());
-
-        System.out.print(map);
+    @Override
+    public String toString() {
+        return name;
     }
 }
