@@ -13,10 +13,12 @@
 	</properties>
 
 	<modules>
-		<module>chapter_001</module>
-		<module>chapter_002</module>
-		<module>chapter_005</module>
-		<module>chapter_008</module>
+		<module>OOP</module>
+		<module>OOP/tracker</module>
+		<module>Syntax</module>
+		<module>SQL_JDBC</module>
+		<module>Collections</module>
+		<module>Servlet_JSP</module>
 	</modules>
 
 
