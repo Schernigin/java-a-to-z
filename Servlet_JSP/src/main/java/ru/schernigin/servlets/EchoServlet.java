@@ -11,7 +11,10 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 /**
- * Created by USER on 03.04.2017.
+ * Class EchoServlet.
+ * @author schernigin.
+ * @since 03.04.2017.
+ * @version 1.0
  */
 public class EchoServlet extends HttpServlet {
     private static final Logger Log = LoggerFactory.getLogger(EchoServlet.class);
@@ -23,4 +26,5 @@ public class EchoServlet extends HttpServlet {
         writer.append("Hello world");
         writer.flush();
     }
+
 }
