@@ -23,7 +23,19 @@ public class EchoServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter writer = new PrintWriter(resp.getOutputStream());
-        writer.append("Hello world");
+        writer.append("<!DOCTYPE html>" +
+                        "<html lang=\"en\">"+
+                        "<head>"+
+                            "<meta charset=\"UTF-8\">"+
+                            "<title>Title</title>"+
+                        "</head>"+
+                        "<body>"+
+                        "<form action='"+req.getContextPath()+"/echo' method '/post'>"+
+                        "Name : <input type=text' name='login'/>"+
+                        "<input type='submit'>"+
+                        "</form>"+
+                        "</body>"+
+                        "</html>");
         writer.flush();
     }
 
