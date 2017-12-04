@@ -18,7 +18,7 @@ public class RotationArray {
 	public int[][] rotation(int[][] array) {
 
 		for(int i = 0; i < array.length / 2; i++) {
-			for(int j = 0; j < array.length - i - 1; j++) {
+			for (int j = 0; j < array.length - i - 1; j++) {
 				int tmp = array[i][j];
 				array[i][j] = array[j][array.length - i - 1];
 				array[j][array.length - i - 1] = array[array.length - i - 1][array.length - j - 1];
