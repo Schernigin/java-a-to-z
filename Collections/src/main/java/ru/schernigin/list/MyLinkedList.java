@@ -73,6 +73,7 @@ public class MyLinkedList<E> implements SimpleContainer<E> {
                 current.previous = null;
                 current.item = null;
             }
+
             current = current.next;
             counter++;
         }
