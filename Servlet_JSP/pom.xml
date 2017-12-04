@@ -1,22 +1,22 @@
 <project>
-    <modelVersion>4.0.0</modelVersion>
+<modelVersion>4.0.0</modelVersion>
+<groupId>ru.schernigin</groupId>
+<artifactId>Servlet_JSP</artifactId>
+<version>1.0</version>
+<packaging>war</packaging>
+
+<parent>
     <groupId>ru.schernigin</groupId>
-    <artifactId>Servlet_JSP</artifactId>
+    <artifactId>java-a-to-z</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+</parent>
 
-    <parent>
-        <groupId>ru.schernigin</groupId>
-        <artifactId>java-a-to-z</artifactId>
-        <version>1.0</version>
-    </parent>
-
-    <dependencies>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
+<dependencies>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>
 </project>

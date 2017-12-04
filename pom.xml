@@ -19,6 +19,7 @@
 		<module>SQL_JDBC</module>
 		<module>Collections</module>
 		<module>Servlet_JSP</module>
+		<module>Multithreading</module>
 	</modules>
 
 
